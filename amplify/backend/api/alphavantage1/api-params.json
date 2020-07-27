@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "alphavantage1resource",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "alphavantage1",
+    "apiName": "alphavantage1",
+    "functionArns": [
+        {
+            "lambdaFunction": "alphavantage1resource"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyapp-dev-161852-authRole",
+        "unAuthRoleName": "amplify-amplifyapp-dev-161852-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "alphavantage1resource",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
