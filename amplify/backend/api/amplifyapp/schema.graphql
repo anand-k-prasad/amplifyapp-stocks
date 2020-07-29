@@ -1,0 +1,9 @@
+type stocksfinal @model {
+  id: ID
+  timestamp: AWSTimestamp
+  totalvolume: Float
+  minprice: Float
+  maxprice: Float
+  openingprice: Float
+  closingprice: Float
+}
