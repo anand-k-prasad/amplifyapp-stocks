@@ -1,35 +1,67 @@
 //import React from 'react';
 import React, { Component } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { API } from 'aws-amplify';
+//import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
+//import { API } from 'aws-amplify';
 import { AgGridReact } from 'ag-grid-react';
+import ReactSearchBox from 'react-search-box'
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 
-// class App extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       columnDefs: [{
-//         headerName: "Make", field: "make", sortable: true, filter: true
-//       }, {
-//         headerName: "Model", field: "model", sortable: true, filter: true
-//       }, {
-//         headerName: "Price", field: "price", sortable: true, filter: true
-//       }],
-//       rowData: [{
-//         make: "Toyota", model: "Celica", price: 35000
-//       }, {
-//         make: "Ford", model: "Mondeo", price: 32000
-//       }, {
-//         make: "Porsche", model: "Boxter", price: 72000
-//       }]
-//     }
-//   }
 
 class App extends Component {
+
+  //new code
+  // const api_url = 'stocks/${stocksymbol}';
+  // const response = await fetch(api_url);
+  // const json = await response.json();
+  // console.log(json);
+  //new code
+
+  data = [
+    {
+      key: 'john',
+      value: 'John Doe',
+    },
+    {
+      key: 'jane',
+      value: 'Jane Doe',
+    },
+    {
+      key: 'mary',
+      value: 'Mary Phillips',
+    },
+    {
+      key: 'robert',
+      value: 'Robert',
+    },
+    {
+      key: 'karius',
+      value: 'Karius',
+    },
+  ]
+
+  // componentDidMount() {
+  //   fetch('https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/sample-data/smallRowData.json')
+  //   .then(result => result.json())
+  //   .then(rowData => this.setState({data}))
+  // }
+
+  //render() {
+  render0() {
+    return (
+      <ReactSearchBox
+        placeholder="Placeholder"
+        value="Doe"
+        data={this.data}
+        callback={record => console.log(record)}
+      />
+    )
+  }
+
+
+
   constructor(props) {
     super(props);
     this.state = {
@@ -40,13 +72,6 @@ class App extends Component {
       }, {
         headerName: "Price", field: "price", sortable: true, filter: true
       }],
-      rowData: [{
-        make: "Toyota", model: "Celica", price: 35000
-      }, {
-        make: "Ford", model: "Mondeo", price: 32000
-      }, {
-        make: "Porsche", model: "Boxter", price: 72000
-      }]
     }
   }
 
@@ -56,7 +81,7 @@ class App extends Component {
      .then(rowData => this.setState({rowData}))
    }
 
-
+  //render()
   render() {
     return (
       <div
@@ -72,7 +97,10 @@ class App extends Component {
       </div>
     );
   }
+
 }
+
+
 
 // function App() {
 //   return (
